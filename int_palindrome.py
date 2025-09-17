@@ -1,11 +1,21 @@
-n = int(input())
+x = 121
+class Solution:
 
-num = n
-result = 0
+    def isPalindrome(self,x):
 
-while num > 0:
-    id = num % 10
-    num = num // 10
-    result = result*10 + id 
+        if x < 0:
+            return False
+        
+        original = x
+        result = 0 
 
-print(result == n) 
+        while x > 0:
+            id = x % 10
+            x = x // 10
+            result = result*10 + id
+
+        return result == original
+
+
+sol = Solution()
+print(sol.isPalindrome(x))

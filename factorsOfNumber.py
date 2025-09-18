@@ -1,12 +1,16 @@
-n = 10
-result = []
+from math import sqrt
+
+n = 777
 
 class Solution:
-    def factorOf(self,n):
-        for i in range(1,n+1):
-            if n % i ==0:
+    def factorsOfNumber(self,num):
+        result = []
+        for i in range(1,int(sqrt(num))+1):
+            if num % i == 0:
                 result.append(i)
-        return result
-    
+                if num // i != i:
+                    result.append(num//i)
+        return(sorted(result))
+
 sol = Solution()
-print(sol.factorOf(n))
+print(sol.factorsOfNumber(n))
